@@ -11,5 +11,8 @@ this is a navbar
     </li>
   </ul>
 <% else %>
-  <%= erb :'sessions/new' %>
+  <ul>
+    <li> <a href='/sessions/new'> Log In </a> </li>
+    <li> <a href='/users/new'> Sign Up </a> </li>
+  </ul>
 <% end %>
