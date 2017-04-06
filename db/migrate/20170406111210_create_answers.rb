@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.string :body
 
-      t.timestamps(null: false)
+      t.timestamps null: false
     end
   end
 end
