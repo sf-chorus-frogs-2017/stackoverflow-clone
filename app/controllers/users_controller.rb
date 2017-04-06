@@ -3,6 +3,12 @@ get '/users/new' do
 end
 
 post '/users' do
-  # create new user
+  @user = User.new(params[:user])
+  if @user.save
+    redirect '/'
+  else
+    @errors = ["Missing registration info"]
+    erb :'users/new'
+  end
 end
 
