@@ -1,11 +1,10 @@
 require 'Faker'
+
 User.all.destroy_all
 Question.all.destroy_all
 Answer.all.destroy_all
 Comment.all.destroy_all
 Vote.all.destroy_all
-
-
 
 user1 = User.new(display_name: 'tom', email: 'tom@tom.com', password_hash: 'tomtom')
 user1.save!
@@ -14,7 +13,7 @@ user2.save!
 user3 = User.new(display_name: 'g', email: 'g@g.com', password_hash: 'gg')
 user3.save!
 
-question1 = Question.new(title: Faker::Hacker.adjective, description: Faker::Hacker.say_something_smart)
+question1 = Question.new(title: Faker::Hacker.adjective, body: Faker::Hacker.say_something_smart)
 question1.save!
 
 answer1 = Answer.new(body: Faker::Hacker.say_something_smart)
