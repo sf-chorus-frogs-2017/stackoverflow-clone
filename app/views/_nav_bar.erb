@@ -1,0 +1,15 @@
+this is a navbar
+
+<% if logged_in? %>
+  <ul>
+    <li> <%= current_user.display_name %> </li>
+    <li>
+      <form action='/sessions' method='POST'>
+        <input type='hidden' name='_method' value='DELETE'>
+        <input type='submit' value='Logout'>
+      </form>
+    </li>
+  </ul>
+<% else %>
+  <%= erb :'sessions/new' %>
+<% end %>
