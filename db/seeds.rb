@@ -19,21 +19,19 @@ question1.save!
 answer1 = Answer.new(body: Faker::Hacker.say_something_smart)
 answer1.save!
 
-question_comment1 = Comment.new(user: user2, body: Faker::Hacker.say_something_smart, commentable_id: question1.id, commentable_type: 'Question')
+question_comment1 = Comment.new(user: user2, body: Faker::Hacker.say_something_smart, commentable: question1)
 question_comment1.save!
-answer_comment1 = Comment.new(user: user1, body: "Thanks, you helped me out!", commentable_id: answer1.id, commentable_type: 'Answer')
+answer_comment1 = Comment.new(user: user1, body: "Thanks, you helped me out!", commentable: answer1)
 answer_comment1.save!
 
-question_vote_1 = Vote.new(user: user2, voteable_id: 1, voteable_type: 'Question')
+question_vote_1 = Vote.new(user: user2, voteable: question1)
 question_vote_1.save!
 
-answer_vote_1 = Vote.new(user: user1, voteable_id: 1, voteable_type: 'Answer')
+answer_vote_1 = Vote.new(user: user1, voteable: answer1)
 answer_vote_1.save!
 
-comment_vote_1 = Vote.new(user: user2, voteable_id: 2, voteable_type: 'Comment')
+comment_vote_1 = Vote.new(user: user2, voteable: answer_comment1)
 comment_vote_1.save!
 
-# question_vote_2 = Vote.new(user: user2, voteable: question_comment1 , voteable_type: 'Comment')
-# SEE IF THIS WORKS
 question_vote_2 = Vote.new(user: user2, voteable: question_comment1)
 question_vote_2.save!
