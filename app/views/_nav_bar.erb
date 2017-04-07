@@ -1,0 +1,16 @@
+<% if logged_in? %>
+  <ul>
+    <li> <%= current_user.display_name %> </li>
+    <li>
+      <form action='/sessions' method='POST'>
+        <input type='hidden' name='_method' value='DELETE'>
+        <input type='submit' value='Logout'>
+      </form>
+    </li>
+  </ul>
+<% else %>
+  <ul>
+    <li> <a href='/sessions/new'> Log In </a> </li>
+    <li> <a href='/users/new'> Sign Up </a> </li>
+  </ul>
+<% end %>

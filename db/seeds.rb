@@ -6,11 +6,11 @@ Answer.all.destroy_all
 Comment.all.destroy_all
 Vote.all.destroy_all
 
-user1 = User.new(display_name: 'tom', email: 'tom@tom.com', password_hash: 'tomtom')
+user1 = User.new(display_name: 'tom', email: 'tom@tom.com', password: 'tomtom')
 user1.save!
-user2 = User.new(display_name: 'tima', email: 'tima@tima.com', password_hash: 'timatima')
+user2 = User.new(display_name: 'tima', email: 'tima@tima.com', password: 'timatima')
 user2.save!
-user3 = User.new(display_name: 'g', email: 'g@g.com', password_hash: 'gg')
+user3 = User.new(display_name: 'g', email: 'g@g.com', password: 'gg')
 user3.save!
 
 question1 = Question.new(title: Faker::Hacker.adjective, body: Faker::Hacker.say_something_smart)
