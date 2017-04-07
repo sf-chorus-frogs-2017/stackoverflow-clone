@@ -26,6 +26,11 @@ body {
   padding: 15px;
 }
 
+textarea {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 1em;
+}
 /* QUESTIONS CSS */
 
 a {
@@ -42,6 +47,29 @@ a {
   float: right;
 }
 
+.submit-answer-button {
+  color: #FFF;
+  background-color: #0095ff;
+  border-color: #07c;
+  box-shadow: inset 0 1px 0 #66bfff;
+  padding: .61538462em 1em;
+  vertical-align: middle;
+  min-height: 2.46153846em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+.submit-answer-reset {
+  color: #07C;
+  background-color: rgba(0,119,204,0);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.no-side-padding {
+  padding-left:0;
+}
+
 .new-question-button:hover {
   background-color: #e6f4ff;
 }
@@ -50,6 +78,10 @@ a {
   float: right;
 }
 
+.answer-form {
+  display: flex;
+  flex-direction: column;
+}
 .question {
   border-bottom: 1px solid gray;
   display: flex;
@@ -61,6 +93,10 @@ a {
 }
 .question-vote-count {
   color: #6a737c;
+}
+
+.question-vote-count span.vote-arrow {
+  font-size: 40px;
 }
 
 .question-total-answers {
@@ -78,6 +114,10 @@ a {
   margin-bottom: 8px;
 }
 
+.border {
+  border-bottom: 1px solid #e4e6e8;
+}
+
 .question-vote-count span, .question-total-answers span {
  font-size:11px;
 }
@@ -88,6 +128,12 @@ a {
 
 .question-title {
   margin-bottom: 1.2em;
+  float: left;
+}
+
+.question-title.show {
+  font-size: 24px;
+  margin-bottom: 0;
 }
 
 .question-title a {

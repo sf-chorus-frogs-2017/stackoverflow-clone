@@ -1,41 +1,58 @@
-<div class="question">
-  <div class="question-title">
-  <%= @question.title %>
+<div class="col-12 border">
+  <div class="question-title show"><%= @question.title %></div>
+  <a class="new-question-button" href="/questions/new">New Question</a>
+</div>
+<div class="col-8">
+  <div class="col-1 no-side-padding">
+    <div class="question-vote-count">
+    <span class="vote-arrow">&#9650;</span>
+    <%= @question.get_total_votes %>
+    <span class="vote-arrow">&#9660;</span>
+    </div>
   </div>
-  <div class="question-vote-count">
-  <%= @question.get_total_votes %>
-  </div>
-  <div class="question-body">
-  <%= @question.body %>
-  </div>
-  <div class="question-user">
-    <%= @question.user.display_name %>
-  </div>
-  <div class="question-user-reputation">
-    <%= @question.user.reputation %>
-  </div>
-    <% @question.comments.each do |comment| %>
-      <% #need to replace with model method later   %>
-    <div class="comment">
-      <div class="comment-vote-count">
-      <%= comment.votes.count %>
-      </div>
-      <div class="comment-body">
-      <%= comment.body %>
-        <% #need to replace with model method later %>
-      </div>
-      <div class="user-display-name">
-      <%= comment.user.display_name %>
-      </div>
-      <div class="user-vote-count">
-      <%= comment.user.reputation %>
+  <div class="col-11">
+    <div class="col-12">
+      <div class="question-body">
+      <%= @question.body %>
       </div>
     </div>
-    <% end %>
+    <div class="col-12">
+      <div class="question-user">
+        <%= @question.user.display_name %>
+      </div>
+      <div class="question-user-reputation">
+        <%= @question.user.reputation %>
+      </div>
+    </div>
+    <div class="col-12 border"></div>
+    <div class="col-12">
+      <% @question.comments.each do |comment| %>
+      <% #need to replace with model method later %>
+      <div class="comment">
+        <div class="comment-vote-count">
+        <%= comment.votes.count %>
+        </div>
+        <div class="comment-body">
+        <%= comment.body %>
+        <% #need to replace with model method later %>
+        </div>
+        <div class="user-display-name">
+        <%= comment.user.display_name %>
+        </div>
+        <div class="user-vote-count">
+        <%= comment.user.reputation %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 total-answers">
+  <%= @question.get_total_answers %> Answers
+  </div>
+  <div class="col-12 border"></div>
+  <div class="col-12 answer-form">
+  <%= erb :'answers/new' %>
   </div>
 </div>
-<hr>
-ANSWERS START HERE
-<div class="question-total-answers">
-<%= @question.get_total_answers %>
+<div class="col-4"></div>
 </div>
