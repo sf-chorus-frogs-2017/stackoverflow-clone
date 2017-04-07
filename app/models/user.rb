@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :questions
   has_many :answers
+  has_many :votes_made, class_name: :vote
 
   validates :display_name, :email, :password_hash, presence: true
   validates :display_name, :email, uniqueness: true
@@ -19,4 +20,5 @@ class User < ActiveRecord::Base
   def authenticate(login_email, login_password)
     self.email == login_email && self.password == login_password
   end
+
 end

@@ -13,10 +13,10 @@ user2.save!
 user3 = User.new(display_name: 'g', email: 'g@g.com', password: 'gg')
 user3.save!
 
-question1 = Question.new(title: Faker::Hacker.adjective, body: Faker::Hacker.say_something_smart)
+question1 = Question.new(title: "How do i do ajax???!!!!", body: Faker::Hacker.say_something_smart, user: user1)
 question1.save!
 
-answer1 = Answer.new(body: Faker::Hacker.say_something_smart)
+answer1 = Answer.new(body: Faker::Hacker.say_something_smart, question: question1, user: user2)
 answer1.save!
 
 question_comment1 = Comment.new(user: user2, body: Faker::Hacker.say_something_smart, commentable: question1)

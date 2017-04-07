@@ -1,0 +1,6 @@
+<form action="/questions/<%= @question.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="title" placeholder="Title (15 character min, 80 max)" value="<%= @question.title if @question %>">
+  <textarea name="body" placeholder="Body" value="<%= @question.body if @question %>"></textarea>
+  <input type="submit" value="Edit Question">
+</form>

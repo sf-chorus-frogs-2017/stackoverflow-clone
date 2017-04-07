@@ -1,0 +1,39 @@
+<a class="new-question-button" href="/questions/new">New Question</a>
+
+<% @questions.each do |question| %>
+<div class="question">
+  <div class="question-vote-count">
+  <%= question.get_total_votes %>
+  </div>
+  <div class="question-total-answers">
+  <%= question.get_total_answers %>
+  </div>
+  <div class="question-title">
+  <a href="/questions/<%= question.id %>">
+    <%= question.title %>
+  </a>
+  </div>
+  <div class="question-body">
+  <%= question.body %>
+  </div>
+    <% question.comments.each do |comment| %>
+      <% #need to replace with model method later   %>
+    <div class="comment">
+      <div class="comment-vote-count">
+      <%= comment.votes.count %>
+      </div>
+      <div class="comment-body">
+      <%= comment.body %>
+        <% #need to replace with model method later %>
+      </div>
+      <div class="user-display-name">
+      <%= comment.user.display_name %>
+      </div>
+      <div class="user-vote-count">
+      <%= comment.user.reputation %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
