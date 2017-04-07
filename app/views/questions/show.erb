@@ -5,10 +5,11 @@
 <div class="col-8">
   <div class="col-1 no-side-padding">
     <div class="question-vote-count">
-    <span class="vote-arrow">&#9650;</span>
-    <%= @question.get_total_votes %>
-    <span class="vote-arrow">&#9660;</span>
+      <span class="vote-arrow">&#9650;</span>
+      <%= @question.get_total_votes %>
+      <span class="vote-arrow">&#9660;</span>
     </div>
+  <%= erb :'votes/_question_vote' %>
   </div>
   <div class="col-11">
     <div class="col-12">
@@ -55,4 +56,15 @@
   </div>
 </div>
 <div class="col-4"></div>
+</div>
+<div class="answers-container">
+  <% @question.answers.each do |answer| %>
+  <div class="answer"><%= answer.body %></div>
+  <div class="answer-comments-container">
+  <% answer.comments.each do |answer_comment| %>
+    <div class="answer-comment"><%= answer_comment.body %><%= answer_comment.user.display_name %>
+    </div>
+  <% end %>
+  </div>
+  <% end %>
 </div>
