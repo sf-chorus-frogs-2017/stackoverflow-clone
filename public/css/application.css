@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+body {
+  width: 1090px;
+  margin: auto;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* QUESTIONS CSS */
+
+a {
+  color: #07c;
+  text-decoration: none;
+}
+
+.new-question-button {
+
+  border: 1px solid #0095ff;
+  box-shadow: none;
+  padding: 10px;
+  border-radius: 3px;
+  float: right;
+}
+
+.new-question-button:hover {
+  background-color: #e6f4ff;
+}
+
+.float-right {
+  float: right;
+}
+
+.question {
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+
+.left {
+  text-align: center;
+  width: 10%;
+}
+.question-vote-count {
+  color: #6a737c;
+}
+
+.question-total-answers {
+  border: 1px solid rgba(69,161,99,0.5);
+  color: #45A163;
+}
+
+.question-vote-count, .question-total-answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 7px 0 5px 0;
+  width: 58px;
+  margin-bottom: 8px;
+}
+
+.question-vote-count span, .question-total-answers span {
+ font-size:11px;
+}
+
+.question-views {
+  font-size: 13px;
+}
+
+.question-title {
+  margin-bottom: 1.2em;
+}
+
+.question-title a {
+  font-size: 16px;
+}
+
+.question-title a:hover {
+  color: #005999;
+}
+
+.question-body {
+  font-size: 13px;
+}
+
+.question-tags-list {
+
+}
+
+.question-tags-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.question-tags-list ul li {
+  display: inline-block;
+
+}
+
+.tag {
+  color: #39739d;
+  background-color: #E1ECF4;
+  font-size: 12px;
+  padding: .4em .5em;
+  margin: 2px 2px 2px 0;
+}
+
+.tag:hover {
+  color: #33658a;
+  background-color: #cee0ed;
+  border-color: rgba(0,0,0,0);
+}
+
+.comment {
+
+}
+
+.comment-vote-count {
+
+}
+
+.comment-body {
+
+}
+
+.user-display-name {
+
+}
+
+.user-vote-count {
+
+}
+
