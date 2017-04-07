@@ -40,3 +40,14 @@ ANSWERS START HERE
 <div class="question-total-answers">
 <%= @question.get_total_answers %>
 </div>
+<div class="answers-container">
+  <% @question.answers.each do |answer| %>
+  <div class="answer"><%= answer.body %></div>
+  <div class="answer-comments-container">
+  <% answer.comments.each do |answer_comment| %>
+    <div class="answer-comment"><%= answer_comment.body %><%= answer_comment.user.display_name %>
+    </div>
+  <% end %>
+  </div>
+  <% end %>
+</div>
