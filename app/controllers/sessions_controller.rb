@@ -5,8 +5,7 @@ end
 post '/sessions' do
   @user = User.find_by(email: params[:email])
   if @user && @user.authenticate(params[:email], params[:password])
-    session[:id] = @user.id
-    redirect '/'
+    login_user
   else
     @errors = ["The email or password is incorrect."]
     erb :'sessions/new'
@@ -14,6 +13,5 @@ post '/sessions' do
 end
 
 delete '/sessions' do
-  session[:id] = nil
-  redirect '/'
+  logout_user
 end

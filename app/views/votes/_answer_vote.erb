@@ -1,0 +1,8 @@
+<form action="/answers/<%= @question.answer.id %>/votes" method="POST">
+  <button type="submit">Up Vote</button>
+</form>
+<form action="/answers/<%= @question.answer.id %>/votes" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit">Down Vote</button>
+</form>
+

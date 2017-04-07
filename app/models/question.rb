@@ -9,11 +9,12 @@ class Question < ActiveRecord::Base
   validates :body, length: { in: (50..4000) }
 
   def get_total_votes
-    self.votes.count
+    self.votes.sum(:vote_value)
   end
 
   def get_total_answers
     self.answers.count
   end
+
 
 end
