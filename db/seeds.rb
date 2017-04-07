@@ -24,14 +24,14 @@ question_comment1.save!
 answer_comment1 = Comment.new(user: user1, body: "Thanks, you helped me out!", commentable: answer1)
 answer_comment1.save!
 
-question_vote_1 = Vote.new(user: user2, voteable: question1)
+question_vote_1 = Vote.new(user: user2, voteable: question1, vote_value: 1)
 question_vote_1.save!
 
-answer_vote_1 = Vote.new(user: user1, voteable: answer1)
+answer_vote_1 = Vote.new(user: user1, voteable: answer1, vote_value: -1)
 answer_vote_1.save!
 
-comment_vote_1 = Vote.new(user: user2, voteable: answer_comment1)
+comment_vote_1 = Vote.new(user: user2, voteable: answer_comment1, vote_value: 1)
 comment_vote_1.save!
 
-question_vote_2 = Vote.new(user: user2, voteable: question_comment1)
+question_vote_2 = Vote.new(user: user2, voteable: question_comment1, vote_value: 1)
 question_vote_2.save!

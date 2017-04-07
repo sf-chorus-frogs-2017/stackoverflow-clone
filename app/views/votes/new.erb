@@ -1,0 +1,7 @@
+<form action="/<%= @voteable.class.to_s.downcase + 's' %>/<%= @voteable.id %>/votes" method="POST">
+  <button type="submit">Up Vote</button>
+</form>
+<form action="/<%= @voteable.class.to_s.downcase + 's' %>/<%= @voteable.id %>/votes" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit">Down Vote</button>
+</form>

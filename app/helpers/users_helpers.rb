@@ -4,8 +4,14 @@ helpers do
     @current_user ||= User.find(session[:id]) if session[:id]
   end
 
-  def logged_in?
-    !!current_user
+  def login_user
+    session[:id] = @user.id
+    redirect '/'
+  end
+
+  def logout_user
+    session[:id] = nil
+    redirect '/'
   end
 
 end
