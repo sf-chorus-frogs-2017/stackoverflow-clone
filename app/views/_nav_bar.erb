@@ -1,3 +1,4 @@
+<div class="side-links">
 <% if current_user %>
   <ul>
     <li> <%= current_user.display_name %> </li>
@@ -9,10 +10,9 @@
     </li>
   </ul>
 <% else %>
-<div class="main-nav">
   <ul>
-    <li> <a href='/sessions/new' class="login-link"> Log In </a> </li>
-    <li> <a href='/users/new' class="sign-up-link"> Sign Up </a> </li>
+    <li> <a href='/sessions/new' class=""> Log In </a> </li>
+    <li> <a href='/users/new' class="submit-answer-button"> Sign Up </a> </li>
   </ul>
-</div>
 <% end %>
+</div>
