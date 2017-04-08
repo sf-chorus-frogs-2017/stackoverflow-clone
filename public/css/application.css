@@ -218,4 +218,42 @@ a {
   margin: 5px;
 }
 
+nav {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+.login-link, .sign-up-link {
+  margin: 3px;
+  padding: 7px;
+  font-size: 13px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+.login-link {
+  color: #005999;
+  border-color: transparent;
+}
+
+.sign-up-link {
+  color: #FFF;
+  background-color: #0095ff;
+  border-color: #07c;
+  text-align: center;
+  line-height: 1;
+}
+
+.sign-up-link:hover {
+  color: rgba(255,255,255,0.9);
+  background-color: #07c;
+  border-color: #005999;
+}
+
+.login-link:hover {
+  background-color: rgba(0,119,204,0.1);
+}
 
