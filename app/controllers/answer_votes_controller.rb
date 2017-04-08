@@ -6,12 +6,20 @@
 post '/answers/:answer_id/votes' do
   @answer = Answer.find(params[:answer_id])
   @vote = Vote.find_by(voteable: @answer, user: current_user, vote_value: 1)
+
   if @vote
     @vote.destroy
   else
-    Vote.create(voteable: @answer, user: current_user, vote_value: 1)
+    @vote = Vote.create(voteable: @answer, user: current_user, vote_value: 1)
   end
-  redirect "/questions/#{@answer.question.id}"
+
+
+  if request.xhr?
+    @answer.get_total_votes.to_s
+  else
+    redirect "/questions/#{@answer.question.id}"
+  end
+
 end
 
 delete '/answers/:answer_id/votes' do

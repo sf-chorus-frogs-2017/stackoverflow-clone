@@ -1,7 +1,13 @@
-<form action="/questions/<%= @question.id %>/votes" method="POST">
-  <button type="submit">Up Vote</button>
-</form>
-<form action="/questions/<%= @question.id %>/votes" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <button type="submit">Down Vote</button>
-</form>
+<div class="question-vote-count">
+  <form action="/questions/<%= @question.id %>/votes" method="POST">
+    <button class="vote-arrow question-up" type="submit">&#9650;</button>
+  </form>
+  <%= @question.get_total_votes %>
+  <form action="/questions/<%= @question.id %>/votes" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="vote-arrow question-down" type="submit">&#9660;</button>
+  </form>
+</div>
+
+
+

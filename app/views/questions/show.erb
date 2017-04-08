@@ -1,53 +1,123 @@
-<div class="question">
-  <div class="question-title">
-  <%= @question.title %>
-  </div>
+<div class="col-12 border">
+  <div class="question-title show"><%= @question.title %></div>
+  <a class="new-question-button" href="/questions/new">New Question</a>
+</div>
+<div class="col-8">
+  <div class="col-1 no-side-padding">
   <%= erb :'votes/_question_vote' %>
-  <div class="question-vote-count">THIS SHOULD CHANGE:
-  <%= @question.get_total_votes %>
   </div>
-  <div class="question-body">
-  <%= @question.body %>
-  </div>
-  <div class="question-user">
-    <%= @question.user.display_name %>
-  </div>
-  <div class="question-user-reputation">
-    <%= @question.user.reputation %>
-  </div>
-    <% @question.comments.each do |comment| %>
-      <% #need to replace with model method later   %>
-    <div class="comment">
-      <div class="comment-vote-count">
-      <%= comment.votes.count %>
+  <div class="col-11">
+    <div class="col-12">
+      <div class="question-body">
+      <%= @question.body %>
       </div>
-      <div class="comment-body">
-      <%= comment.body %>
-        <% #need to replace with model method later %>
+    </div>
+
+
+
+
+      <div class="col-7"></div>
+      <div class="col-5">
+        <div class="question-user-container">
+          <div class="question-user">
+            <%= @question.user.display_name %>
+          </div>
+          <div class="question-user-reputation">
+            <%= @question.user.reputation %>
+          </div>
+        </div>
       </div>
-      <div class="user-display-name">
-      <%= comment.user.display_name %>
+
+
+
+
+
+
+    <div class="col-12 border"></div>
+    <div class="question-comments-container">
+      <% @question.comments.each do |comment| %>
+      <% #need to replace with model method later %>
+      <div class="comment">
+        <div class="col-1">
+          <div class="comment-vote-count">
+          <%= comment.votes.count %>
+          </div>
+        </div>
+        <div class="col-11">
+          <div class="comment-body">
+            <%= comment.body %>
+            -
+            <% #need to replace with model method later %>
+            <span class="submit-answer-reset"><%= comment.user.display_name %></span>
+          </div>
+        </div>
       </div>
-      <div class="user-vote-count">
-      <%= comment.user.reputation %>
+      <div class="col-12 border"></div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="col-12 total-answers">
+  <%= @question.get_total_answers %> Answers
+  </div>
+  <div class="col-12 border"></div>
+
+
+
+
+
+
+
+
+
+
+ <div class="col-12 answers-container">
+  <% @question.answers.each do |answer| %>
+  <div class="answer-container">
+    <div class="col-1 no-side-padding">
+    <%= erb :'votes/_answer_vote', locals: {answer: answer} %>
+    </div>
+    <div class="col-11">
+      <div class="question-body">
+      <%= answer.body %>
+      </div>
+      <div class="col-7"></div>
+      <div class="col-5">
+        <div class="question-user-container">
+          <div class="question-user">
+          <%= answer.user.display_name %>
+          </div>
+          <div class="question-user-reputation">
+          <%= answer.user.reputation %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 border"></div>
+        <% answer.comments.each do |answer_comment| %>
+        <div class="comment">
+          <div class="col-1"><div class="comment-vote-count"><%= answer_comment.votes.count %></div></div>
+          <div class="col-11">
+            <div class="comment-body">
+            <%= answer_comment.body %> - <span class="submit-answer-reset"><%= answer_comment.user.display_name %></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 border"></div>
+        <% end %>
       </div>
     </div>
     <% end %>
+  </div> <!-- ends answer container -->
+
+
+  <div class="col-12 answer-form">
+  <%= erb :'answers/new' %>
   </div>
-</div>
-<hr>
-ANSWERS START HERE
-<div class="question-total-answers">
-<%= @question.get_total_answers %>
-</div>
-<div class="answers-container">
-  <% @question.answers.each do |answer| %>
-  <div class="answer"><%= answer.body %></div>
-  <div class="answer-comments-container">
-  <% answer.comments.each do |answer_comment| %>
-    <div class="answer-comment"><%= answer_comment.body %><%= answer_comment.user.display_name %>
-    </div>
-  <% end %>
-  </div>
-  <% end %>
-</div>
+
+</div> <!-- ends col-8 -->
+<div class="col-4"></div>
+
+
+
+

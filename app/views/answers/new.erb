@@ -1,0 +1,6 @@
+<form action="/answers" method="post">
+  <textarea class="answer-input" name="answer[body]"></textarea>
+  <input type="hidden" name="answer[question_id]" value="<%= @question.id %>">
+  <button class="submit-answer-button" type="submit">Post Answer</button>
+  <button class="submit-answer-reset" type="reset">discard</button>
+</form>
