@@ -15,14 +15,18 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>StackLevelTooDeep</title>
 </head>
 <body>
-<header>
-  <h1> Stackoverflowclone </h1>
-  <%= erb :_nav_bar %>
-  <%= erb :_errors %>
-</header>
+  <nav class="border">
+    <div class="container">
+      <div class="logo">
+        <h1>StackLevelTooDeep</h1>
+      </div>
+        <%= erb :_nav_bar %>
+        <%= erb :_errors %>
+    </nav>
+  </div>
   <%= yield %>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<div class="side-links">
 <% if current_user %>
   <ul>
     <li> <%= current_user.display_name %> </li>
@@ -10,7 +11,8 @@
   </ul>
 <% else %>
   <ul>
-    <li> <a href='/sessions/new'> Log In </a> </li>
-    <li> <a href='/users/new'> Sign Up </a> </li>
+    <li> <a href='/sessions/new' class=""> Log In </a> </li>
+    <li> <a href='/users/new' class="submit-answer-button"> Sign Up </a> </li>
   </ul>
 <% end %>
+</div>
